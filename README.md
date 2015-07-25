@@ -1,5 +1,5 @@
 # CleanGetDataProject
-Repository to save the files from the Coursera Clean and Get Data project
+
 The deliverables for this project are: 
 1- README.md : this file. It describes the steps followed to get to the final data set.
 2- CodeBook.md : the CodeBook reference to the variables in used in this analyis
