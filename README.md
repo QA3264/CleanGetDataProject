@@ -20,12 +20,12 @@ library(dplyr) was loaded.
 - Combined all x_test related data frames into one dataframe (with subject_ID and activity_type as first two columns)
 - Combined all x_train related data frames into one dataframe (with subject_ID and activity_type as firt two columns)
 - Merged two datasets into "mergedData" dataframe using rbind-function ( 563 variables with subject_ID and activity_type as first two columns)
-- Slected those columns which had "mean" or "std" in their names. I specifically searched for those 2 patterns. I didn't select variables which had word "Mean"(such as "tBodyAccMean" or "gravityMean") in their names. 79 variables were found.
+- Selected those columns which had "mean" or "std" in their names. I specifically searched for those 2 patterns. I didn't select variables which had word "Mean"(such as "tBodyAccMean" or "gravityMean") in their names. 79 variables were found.
 - Added subject_ID and acivity_type to the variable list. This brought the list of variable to 81.
 - Subset the merged data for those 81 variables (going from 563 to 81)
-- Arrangeed data by subject_ID and activity_type
+- Arranged data by subject_ID and activity_type
 - Substituted activity-numbers with activity names/labels
 - Changed variable names to more descriptive names
 - Applied  aggregate-function to the above dataset to create the final summary dataset (with averages for each measurement variable)
-- Wrore the data into a tab-separated text file (summarydata.txt) using write.table- function
+- Wrote the data into a tab-separated text file (summarydata.txt) using write.table- function
 
