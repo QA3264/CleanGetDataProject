@@ -78,7 +78,7 @@ names(mergedData) =gsub("Jerk", " Jerk",names(mergedData))
 ## summarize the data by subject_ID and activity_type using aggregate function
 ## then arrange them in order (for each subject_ID order the activities)
 summaryData = aggregate(mergedData[,-(1:2)], by = mergedData[c("subject_ID","activity_type")], FUN=mean)
-activity_factor = factor(summaryData$activity_type, levels = c("WALKING","WALKING_UPSTAIRS","WALKING_DOWNSTAIRS","SITTING","STANDING", "LAYING"))
+activity_factor = factor(summaryData$activity_type, levels = activlabel$V2)
 summaryData = summaryData[order(summaryData$subject_ID, activity_factor),]
 
 

@@ -39,6 +39,8 @@ The following transformations were made:
 has 180 rows (30 subject * 6 activities) and 81 columns/variables (79 measurement variables + subject_ID + activity_type)
 
 The list of 79 measurement variables with mean/std in their names before making them more descriptive: 
+- The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
+- The gyroscope units are rad/seg.
 
  [1] "tBodyAcc-mean()-X"              
  [2] "tBodyAcc-mean()-Y"              
@@ -123,6 +125,8 @@ The list of 79 measurement variables with mean/std in their names before making 
 
 
 The list of 79 measurement variables with mean/std in their names after making them more descriptive: 
+- The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
+- The gyroscope units are rad/seg.
 
  [1] "Time Domain Body Accelerometer mean-X Axis"                 
  [2] "Time Domain Body Accelerometer mean-Y Axis"                 
