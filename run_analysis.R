@@ -39,6 +39,7 @@ xtrain_extend = cbind(subjtrain,ytrain,xtrain)
 ## merge two datasets into "mergedData" dataframe using rbind-function
 mergedData = rbind(xtrain_extend,xtest_extend)
 
+
 ## select those columns which have "mean" or "std" in their names
 ## Not including variables that include "tBodyAccMean" or "gravityMean"
 feat_mean_std = grep("mean|std",names(mergedData))
@@ -85,5 +86,5 @@ activity_factor = factor(summaryData$activity_type, levels = activlabel$V2)
 summaryData = summaryData[order(summaryData$subject_ID, activity_factor),]
 
 
-# write the data into "summarydata.txt" with row.names=FALSE and seperartion = tab
-write.table(summaryData, "summarydata.txt", row.names = FALSE, sep="\t")
+# write the data into "summarydata.txt" with row.names=FALSE and seperartion = space
+write.table(summaryData, "summarydata.txt", row.names = FALSE, sep=" ")

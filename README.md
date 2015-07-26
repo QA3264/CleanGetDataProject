@@ -1,10 +1,10 @@
 ## README file for the GetDataProject
 
 ### The deliverables for this project are: 
-- README.md : this file. It describes the steps followed to get to the final data set.
+- README.md : this file. It describes the steps followed to get to the final tidy data set.
 - CodeBook.md : the CodeBook reference to the variables in used in this analyis
 - run_analysis.R : the R-code to read the data and create the final tidy data set. Only 1 script for this project.
-- A tab -delimited text file, summarydata.txt , that contains the final tidy data set. 
+- A space-delimited text file, summarydata.txt. It contains the final tidy data set. 
 
 ### The R scripts assumes that the required text files are already available in the working directory:
 The zip file was manually copied to C drive. after unzipping, the relevant files (8 of them) were copied to a working directory. Files used for this analysis were:
@@ -33,5 +33,5 @@ The zip file was manually copied to C drive. after unzipping, the relevant files
 - Substituted activity-numbers with activity names/labels
 - Changed variable names to more descriptive names
 - Applied  aggregate-function to the above dataset to create the final summary dataset (with averages for each measurement variable)
-- Wrote the data into a tab-separated text file (summarydata.txt) using write.table- function
+- Wrote the data into a space-separated text file (summarydata.txt) using write.table-function
 
