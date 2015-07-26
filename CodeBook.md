@@ -71,8 +71,8 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 
 
 ### The list of 79 measurement variables with mean/std in their names(before making them more descriptive): 
-- The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
-- The gyroscope units are rad/seg.
+##### The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
+#####The gyroscope units are rad/seg.
 
  [1] "tBodyAcc-mean()-X"              
  [2] "tBodyAcc-mean()-Y"              
@@ -164,12 +164,12 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 - "Acc" in the name of variable was changed to "accelerometer"
 - "Gyro"in the name of variable was changed to "gyroscope"
 - "Mag" in the name of variable was changed to "magnitude"
-- "()" was removed from the variable names
+- "()" was removed from the variable names  
 - duplicate words were removed (e.g. first "Body" from "BodyBody")
 
-- The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
-- The gyroscope units are rad/seg.
 
+##### The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
+##### The gyroscope units are rad/seg.
 
  [1] "timedomainbodyaccelerometermean-x"                    
  [2] "timedomainbodyaccelerometermean-y"                    
@@ -243,7 +243,7 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 [70] "frequencydomainbodyaccelerometermagnitudemeanfreq"    
 [71] "frequencydomainbodyaccelerometerjerkmagnitudemean"    
 [72] "frequencydomainbodyaccelerometerjerkmagnitudestd"     
-[73] "frequencydomainbodyaccelerometerjerkmagnitudemeanfreq"
+[73] "frequencydomainbodyaccelerometerjerkmagnitudemeanfreq"  
 [74] "frequencydomainbodygyroscopemagnitudemean"            
 [75] "frequencydomainbodygyroscopemagnitudestd"             
 [76] "frequencydomainbodygyroscopemagnitudemeanfreq"        
