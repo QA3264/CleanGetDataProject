@@ -19,28 +19,24 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
   + $ V2: Factor w/ 6 levels "LAYING","SITTING",..: 4 6 5 2 3 1
 
 - xtrain (read from X_train.txt'): Training set- 7352 rows (observatioan), 561 columns/variables (measurements)  
-  + 'data.frame':	7352 obs. of  561 variables:
+  + 'data.frame':	7352 obs. of  561 variables (the first four variables copied below):
   + $ tBodyAcc-mean()-X                   : num  0.289 0.278 0.28 0.279 0.277 ...
   + $ tBodyAcc-mean()-Y                   : num  -0.0203 -0.0164 -0.0195 -0.0262 -0.0166 ...
   + $ tBodyAcc-mean()-Z                   : num  -0.133 -0.124 -0.113 -0.123 -0.115 ...
   + $ tBodyAcc-std()-X                    : num  -0.995 -0.998 -0.995 -0.996 -0.998 ...
-    .
-    .
-    .
+ 
 
 - ytrain ( read from y_train.txt'): Training labels for activities - 7352 rows (observations), 1 column (activity number)  
   + 'data.frame':	7352 obs. of  1 variable:
   + $ activitytype: int  5 5 5 5 5 5 5 5 5 5 ...
 
 - xtest (read from X_test.txt'): Test set - 2947 rows (observations), 561 columns (measurements)  
-  + 'data.frame':	2947 obs. of  561 variables:
+  + 'data.frame':	2947 obs. of  561 variables (the first four variables copied below):
   + $ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
   + $ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
   + $ tBodyAcc-mean()-Z                   : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
   + $ tBodyAcc-std()-X                    : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
-    .
-    .
-    .
+    
 
 - ytest (read from 'y_test.txt'): Test labels for activities - 2947 rows (measurements), 1 column (activity number)  
   + 'data.frame':	2947 obs. of  1 variable:
