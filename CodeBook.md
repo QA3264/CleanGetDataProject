@@ -1,4 +1,4 @@
-# CodeBook
+## CodeBook
 
 This CodeBook describes the datasets that were used in project for Getting and Cleaning Data Course.
 The data is coming from an experiment that was carried out with a group of 30 volunteers within an age bracket of 19-48 years.
@@ -6,7 +6,7 @@ Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTA
 on the waist. Various measurements were captured during this experiment.
 The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers were selected for generating the training data and 30% the test data.
 
-## The following dataframe variables (8) were created by reading data from the data files:
+### The following dataframe variables(8 of them) were created by reading data from the data files:
 
 - features (read from'features.txt') : List of all features- 561 rows, 2 columns (column2 = the name of the measurements)
 
@@ -25,7 +25,7 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 - subjtest (read from 'subject_test.txt): 2947 rows (observations), 1 column (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 
 
-## The following transformations were made:
+### The following transformations were made to get to the final tidy set:
 
 - Combined/merged xtrain,ytrain, and subjtrain dataframe to create 1 dataframe for training reated data (7352 rows, 563 columns)
 
@@ -41,7 +41,7 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 has 180 rows (30 subject * 6 activities) and 81 columns/variables (79 measurement variables + subject_ID + activity_type)
 
 
-## The list of 79 measurement variables with mean/std in their names before making them more descriptive: 
+### The list of 79 measurement variables with mean/std in their names(before making them more descriptive): 
 - The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
 - The gyroscope units are rad/seg.
 
@@ -127,19 +127,19 @@ has 180 rows (30 subject * 6 activities) and 81 columns/variables (79 measuremen
 
 
 
-## The names of 79 measurement variables were transformed (using the rules below) to make them more descriptive: 
+### The following changes were made to the names of 79 measurement variables to make them more descriptive: 
 
 
-" " (space) was introduced among components of variables to make them more readable
-"t" at the begin of variable was changed to "Time Domain "
-"f" at the begin of variable was changed to "Frequency Domain "
-"Acc" in the name of variable was changed to " Accelerometer"
-"Gyro"in the name of variable was changed to " Gyroscope"
-"Mag" in the name of variable was changed to " Magnitude"
-"X" was changed to "X Axis"
-"Y" was changed to "Y Axis"
-"Z" was changed to  "Z Axis"
-"()" was removed from the variable names
+- " " (space) was introduced among components of variables to make them more readable
+- "t" at the begin of variable was changed to "Time Domain "
+- "f" at the begin of variable was changed to "Frequency Domain "
+- "Acc" in the name of variable was changed to " Accelerometer"
+- "Gyro"in the name of variable was changed to " Gyroscope"
+- "Mag" in the name of variable was changed to " Magnitude"
+= "X" was changed to "X Axis"
+= "Y" was changed to "Y Axis"
+- "Z" was changed to  "Z Axis"
+- "()" was removed from the variable names
 
 - The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
 - The gyroscope units are rad/seg.
