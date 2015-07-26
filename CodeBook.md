@@ -8,19 +8,19 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 ### The following dataframe variables(8 of them) were created by reading data from the data files:
 
-- features (read from'features.txt') : List of all features- 561 rows, 2 columns (variable1= row number, Variable2= the name of the measurements)
+1. features (read from'features.txt') : List of all features- 561 rows, 2 columns (variable1= row number, Variable2= the name of the measurements)
 
 data.frame':	561 obs. of  2 variables:
  $ V1: int  1 2 3 4 5 6 7 8 9 10 ...
  $ V2: Factor w/ 477 levels "angle(tBodyAccJerkMean),gravityMean)",..: 243 244 245 250 251 252 237 238 239 240 ...
 
-- activlabel ( read from 'activity_labels.txt'): list if activity names- 6 rows, 2 columns (variable1= row number ,; Variable2= name of acitivity)
+2. activlabel ( read from 'activity_labels.txt'): list if activity names- 6 rows, 2 columns (variable1= row number ,; Variable2= name of acitivity)
  
 'data.frame':	6 obs. of  2 variables:
  $ V1: int  1 2 3 4 5 6
  $ V2: Factor w/ 6 levels "LAYING","SITTING",..: 4 6 5 2 3 1
 
-- xtrain (read from X_train.txt'): Training set- 7352 rows (observatioan), 561 columns/variables (measurements)
+3. xtrain (read from X_train.txt'): Training set- 7352 rows (observatioan), 561 columns/variables (measurements)
 
 'data.frame':	7352 obs. of  561 variables:
  $ tBodyAcc-mean()-X                   : num  0.289 0.278 0.28 0.279 0.277 ...
@@ -31,12 +31,12 @@ data.frame':	561 obs. of  2 variables:
  .
  .
 
-- ytrain ( read from y_train.txt'): Training labels for activities - 7352 rows (observations), 1 column (activity number).
+4. ytrain ( read from y_train.txt'): Training labels for activities - 7352 rows (observations), 1 column (activity number).
 
 'data.frame':	7352 obs. of  1 variable:
  $ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
 
-- xtest (read from X_test.txt'): Test set - 2947 rows (observations), 561 columns (measurements)
+5. xtest (read from X_test.txt'): Test set - 2947 rows (observations), 561 columns (measurements)
 
 'data.frame':	2947 obs. of  561 variables:
  $ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
@@ -47,17 +47,17 @@ data.frame':	561 obs. of  2 variables:
  .
  .
 
-- ytest (read from 'y_test.txt'): Test labels for activities - 2947 rows (measurements), 1 column (activity number). 
+6. ytest (read from 'y_test.txt'): Test labels for activities - 2947 rows (measurements), 1 column (activity number). 
 
 'data.frame':	2947 obs. of  1 variable:
  $ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
 
-- subjtrain (read from 'subject_train.txt): 7352 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+7. subjtrain (read from 'subject_train.txt): 7352 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
 
 'data.frame':	7352 obs. of  1 variable:
  $ subject_ID: int  1 1 1 1 1 1 1 1 1 1 ...
 
-- subjtest (read from 'subject_test.txt): 2947 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+8. subjtest (read from 'subject_test.txt): 2947 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 
 'data.frame':	2947 obs. of  1 variable:
  $ subject_ID: int  2 2 2 2 2 2 2 2 2 2 ...
@@ -75,7 +75,7 @@ data.frame':	561 obs. of  2 variables:
 - Subset the merged data for 81 variables (79 measurement variables + subject_ID + activity_type). 10299 rows(observation), 81 columns
 
 - The above dataset was used to create the final tidy set with average for each measurement variable (in respect to Subject_ID and activity_type). The final tiday set 
-has 180 rows (30 subject * 6 activities) and 81 columns/variables (79 measurement variables + subject_ID + activity_type)
+has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measurement variables + subject_ID + activity_type)
 
 
 ### The list of 79 measurement variables with mean/std in their names(before making them more descriptive): 
