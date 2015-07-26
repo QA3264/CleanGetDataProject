@@ -8,59 +8,50 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 ### The following dataframe variables(8 of them) were created by reading data from the data files:
 
-1. features (read from'features.txt') : List of all features- 561 rows, 2 columns (variable1= row number, Variable2= the name of the measurements)
+- features (read from'features.txt') : List of all features- 561 rows, 2 columns (variable1= row number, Variable2= the name of the measurements)
+  + data.frame':	561 obs. of  2 variables:
+  + $ V1: int  1 2 3 4 5 6 7 8 9 10 ...
+  + $ V2: Factor w/ 477 levels "angle(tBodyAccJerkMean),gravityMean)",..: 243 244 245 250 251 252 237 238 239 240 ...
 
-+ data.frame':	561 obs. of  2 variables:
-+ $ V1: int  1 2 3 4 5 6 7 8 9 10 ...
-+ $ V2: Factor w/ 477 levels "angle(tBodyAccJerkMean),gravityMean)",..: 243 244 245 250 251 252 237 238 239 240 ...
+- activlabel ( read from 'activity_labels.txt'): list if activity names- 6 rows, 2 columns (variable1= row number, Variable2= name of acitivity)
+  + 'data.frame':	6 obs. of  2 variables:
+  + $ V1: int  1 2 3 4 5 6
+  + $ V2: Factor w/ 6 levels "LAYING","SITTING",..: 4 6 5 2 3 1
 
-2. activlabel ( read from 'activity_labels.txt'): list if activity names- 6 rows, 2 columns (variable1= row number ,; Variable2= name of acitivity)
- 
-+ 'data.frame':	6 obs. of  2 variables:
-+ $ V1: int  1 2 3 4 5 6
-+ $ V2: Factor w/ 6 levels "LAYING","SITTING",..: 4 6 5 2 3 1
+- xtrain (read from X_train.txt'): Training set- 7352 rows (observatioan), 561 columns/variables (measurements)
+  +'data.frame':	7352 obs. of  561 variables:
+  +$ tBodyAcc-mean()-X                   : num  0.289 0.278 0.28 0.279 0.277 ...
+  +$ tBodyAcc-mean()-Y                   : num  -0.0203 -0.0164 -0.0195 -0.0262 -0.0166 ...
+  +$ tBodyAcc-mean()-Z                   : num  -0.133 -0.124 -0.113 -0.123 -0.115 ...
+  +$ tBodyAcc-std()-X                    : num  -0.995 -0.998 -0.995 -0.996 -0.998 ...
+  +.
+  +.
+  +.
 
-3. xtrain (read from X_train.txt'): Training set- 7352 rows (observatioan), 561 columns/variables (measurements)
+- ytrain ( read from y_train.txt'): Training labels for activities - 7352 rows (observations), 1 column (activity number).
+  +'data.frame':	7352 obs. of  1 variable:
+  +$ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
 
-'data.frame':	7352 obs. of  561 variables:
- $ tBodyAcc-mean()-X                   : num  0.289 0.278 0.28 0.279 0.277 ...
- $ tBodyAcc-mean()-Y                   : num  -0.0203 -0.0164 -0.0195 -0.0262 -0.0166 ...
- $ tBodyAcc-mean()-Z                   : num  -0.133 -0.124 -0.113 -0.123 -0.115 ...
- $ tBodyAcc-std()-X                    : num  -0.995 -0.998 -0.995 -0.996 -0.998 ...
- .
- .
- .
+- xtest (read from X_test.txt'): Test set - 2947 rows (observations), 561 columns (measurements)
+  +'data.frame':	2947 obs. of  561 variables:
+  +$ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
+  +$ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
+  +$ tBodyAcc-mean()-Z                   : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
+  +$ tBodyAcc-std()-X                    : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
+  +.
+  +.
 
-4. ytrain ( read from y_train.txt'): Training labels for activities - 7352 rows (observations), 1 column (activity number).
+- ytest (read from 'y_test.txt'): Test labels for activities - 2947 rows (measurements), 1 column (activity number). 
+  +'data.frame':	2947 obs. of  1 variable:
+  +$ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
 
-'data.frame':	7352 obs. of  1 variable:
- $ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
+- subjtrain (read from 'subject_train.txt): 7352 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+  +'data.frame':	7352 obs. of  1 variable:
+  +$ subject_ID: int  1 1 1 1 1 1 1 1 1 1 ...
 
-5. xtest (read from X_test.txt'): Test set - 2947 rows (observations), 561 columns (measurements)
-
-'data.frame':	2947 obs. of  561 variables:
- $ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
- $ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
- $ tBodyAcc-mean()-Z                   : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
- $ tBodyAcc-std()-X                    : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
- .
- .
- .
-
-6. ytest (read from 'y_test.txt'): Test labels for activities - 2947 rows (measurements), 1 column (activity number). 
-
-'data.frame':	2947 obs. of  1 variable:
- $ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
-
-7. subjtrain (read from 'subject_train.txt): 7352 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-
-'data.frame':	7352 obs. of  1 variable:
- $ subject_ID: int  1 1 1 1 1 1 1 1 1 1 ...
-
-8. subjtest (read from 'subject_test.txt): 2947 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
-
-'data.frame':	2947 obs. of  1 variable:
- $ subject_ID: int  2 2 2 2 2 2 2 2 2 2 ...
+- subjtest (read from 'subject_test.txt): 2947 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
+  +'data.frame':	2947 obs. of  1 variable:
+  +$ subject_ID: int  2 2 2 2 2 2 2 2 2 2 ...
 
 ### The following transformations were made to get to the final tidy set:
 
@@ -254,7 +245,7 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 [70] "Frequency Domain Body Accelerometer Magnitude meanFreq"     
 [71] "Frequency Domain Body Accelerometer Jerk Magnitude mean"    
 [72] "Frequency Domain Body Accelerometer Jerk Magnitude std"     
-[73] "Frequency Domain Body Accelerometer Jerk Magnitude meanFreq"
+[73] "Frequency Domain Body Accelerometer Jerk Magnitude meanFreq"  
 [74] "Frequency Domain Body Gyroscope Magnitude mean"             
 [75] "Frequency Domain Body Gyroscope Magnitude std"              
 [76] "Frequency Domain Body Gyroscope Magnitude meanFreq"         
