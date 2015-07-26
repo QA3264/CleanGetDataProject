@@ -1,4 +1,6 @@
 
+
+## The code requires "dplyr" library
 library(dplyr)
 
 ## read all training related data
