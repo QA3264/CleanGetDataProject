@@ -10,15 +10,15 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 1. features (read from'features.txt') : List of all features- 561 rows, 2 columns (variable1= row number, Variable2= the name of the measurements)
 
-data.frame':	561 obs. of  2 variables:
- $ V1: int  1 2 3 4 5 6 7 8 9 10 ...
- $ V2: Factor w/ 477 levels "angle(tBodyAccJerkMean),gravityMean)",..: 243 244 245 250 251 252 237 238 239 240 ...
++ data.frame':	561 obs. of  2 variables:
++ $ V1: int  1 2 3 4 5 6 7 8 9 10 ...
++ $ V2: Factor w/ 477 levels "angle(tBodyAccJerkMean),gravityMean)",..: 243 244 245 250 251 252 237 238 239 240 ...
 
 2. activlabel ( read from 'activity_labels.txt'): list if activity names- 6 rows, 2 columns (variable1= row number ,; Variable2= name of acitivity)
  
-'data.frame':	6 obs. of  2 variables:
- $ V1: int  1 2 3 4 5 6
- $ V2: Factor w/ 6 levels "LAYING","SITTING",..: 4 6 5 2 3 1
++ 'data.frame':	6 obs. of  2 variables:
++ $ V1: int  1 2 3 4 5 6
++ $ V2: Factor w/ 6 levels "LAYING","SITTING",..: 4 6 5 2 3 1
 
 3. xtrain (read from X_train.txt'): Training set- 7352 rows (observatioan), 561 columns/variables (measurements)
 
