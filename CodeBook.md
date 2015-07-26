@@ -152,7 +152,7 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 
 
 
-### The following changes were made to the names of 79 measurement variables to make them more readable: 
+#### The following changes were made to the names of 79 measurement variables to make them more readable: 
 
 - Names of all variables were converted to lower case
 - "t" at the begin of variable was changed to "timedomain"
@@ -164,6 +164,7 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 - duplicate words were removed (e.g. first "Body" from "BodyBody")
 
 
+### The list of 79 measurement variables after making above changes: 
 ##### The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
 ##### The gyroscope units are rad/seg.
 
