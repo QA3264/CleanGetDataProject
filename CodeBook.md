@@ -30,7 +30,7 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 - ytrain ( read from y_train.txt'): Training labels for activities - 7352 rows (observations), 1 column (activity number)  
   + 'data.frame':	7352 obs. of  1 variable:
-  + $ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
+  + $ activitytype: int  5 5 5 5 5 5 5 5 5 5 ...
 
 - xtest (read from X_test.txt'): Test set - 2947 rows (observations), 561 columns (measurements)  
   + 'data.frame':	2947 obs. of  561 variables:
@@ -44,15 +44,15 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 - ytest (read from 'y_test.txt'): Test labels for activities - 2947 rows (measurements), 1 column (activity number)  
   + 'data.frame':	2947 obs. of  1 variable:
-  + $ activity_type: int  5 5 5 5 5 5 5 5 5 5 ...
+  + $ activitytype: int  5 5 5 5 5 5 5 5 5 5 ...
 
-- subjtrain (read from 'subject_train.txt): 7352 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.  
+- subjtrain (read from 'subject_train.txt): 7352 rows (observations), 1 column/variable (subjecid). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.  
   + 'data.frame':	7352 obs. of  1 variable:
-  + $ subject_ID: int  1 1 1 1 1 1 1 1 1 1 ...
+  + $ subjectid: int  1 1 1 1 1 1 1 1 1 1 ...
 
-- subjtest (read from 'subject_test.txt): 2947 rows (observations), 1 column/variable (subject ID). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.  
+- subjtest (read from 'subject_test.txt): 2947 rows (observations), 1 column/variable (subjectid). Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.  
   + 'data.frame':	2947 obs. of  1 variable:
-  + $ subject_ID: int  2 2 2 2 2 2 2 2 2 2 ...
+  + $ subjectid: int  2 2 2 2 2 2 2 2 2 2 ...
 
 ### The following transformations were made to get to the final tidy set:
 
@@ -60,14 +60,14 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
 
 - Combined/merged xtest,ytest, and subjtest dataframes to create 1 dataframe for test reated data  (2947 rows, 563 columns)
 
-- Merged two above datasets into "mergedData" dataframe using rbind-function ( 10299 rows, 563 columns/variables with subject_ID and activity_type as first two columns)
+- Merged two above datasets into "mergedData" dataframe using rbind-function ( 10299 rows, 563 columns/variables with subjectid and activitytype as first two columns)
 
 - Slected those columns which had "mean" or "std" in their names (79 matches). I specifically searched for those 2 patterns. I didn't select variables which had word "Mean"(such as "tBodyAccMean" or "gravityMean") in their names. 79 variables were found.
 
-- Subset the merged data for 81 variables (79 measurement variables + subject_ID + activity_type). 10299 rows(observation), 81 columns
+- Subset the merged data for 81 variables (79 measurement variables + subjectid + activitytype). 10299 rows(observation), 81 columns
 
-- The above dataset was used to create the final tidy set with average for each measurement variable (in respect to Subject_ID and activity_type). The final tiday set 
-has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measurement variables + subject_ID + activity_type)
+- The above dataset was used to create the final tidy set with average for each measurement variable (in respect to subjectid and activitytype). The final tiday set 
+has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measurement variables + subjectid + activitytype)
 
 
 ### The list of 79 measurement variables with mean/std in their names(before making them more descriptive): 
@@ -158,98 +158,95 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 
 ### The following changes were made to the names of 79 measurement variables to make them more descriptive: 
 
-
-- " " (space) was introduced among components of variables to make them more readable
-- "t" at the begin of variable was changed to "Time Domain "
-- "f" at the begin of variable was changed to "Frequency Domain "
-- "Acc" in the name of variable was changed to " Accelerometer"
-- "Gyro"in the name of variable was changed to " Gyroscope"
-- "Mag" in the name of variable was changed to " Magnitude"
-= "X" was changed to "X Axis"
-= "Y" was changed to "Y Axis"
-- "Z" was changed to  "Z Axis"
+- Names of all variables were converted to lower case
+- "t" at the begin of variable was changed to "timedomain"
+- "f" at the begin of variable was changed to "frequencydomain "
+- "Acc" in the name of variable was changed to "accelerometer"
+- "Gyro"in the name of variable was changed to "gyroscope"
+- "Mag" in the name of variable was changed to "magnitude"
 - "()" was removed from the variable names
+- duplicate words were removed (e.g. first "Body" from "BodyBody")
 
 - The units used for the accelerations are 'g's (gravity of earth -> 9.80665 m/seg2).
 - The gyroscope units are rad/seg.
 
 
- [1] "Time Domain Body Accelerometer mean-X Axis"                 
- [2] "Time Domain Body Accelerometer mean-Y Axis"                 
- [3] "Time Domain Body Accelerometer mean-Z Axis"                 
- [4] "Time Domain Body Accelerometer std-X Axis"                  
- [5] "Time Domain Body Accelerometer std-Y Axis"                  
- [6] "Time Domain Body Accelerometer std-Z Axis"                  
- [7] "Time Domain Gravity Accelerometer mean-X Axis"              
- [8] "Time Domain Gravity Accelerometer mean-Y Axis"              
- [9] "Time Domain Gravity Accelerometer mean-Z Axis"              
-[10] "Time Domain Gravity Accelerometer std-X Axis"               
-[11] "Time Domain Gravity Accelerometer std-Y Axis"               
-[12] "Time Domain Gravity Accelerometer std-Z Axis"               
-[13] "Time Domain Body Accelerometer Jerk mean-X Axis"            
-[14] "Time Domain Body Accelerometer Jerk mean-Y Axis"            
-[15] "Time Domain Body Accelerometer Jerk mean-Z Axis"            
-[16] "Time Domain Body Accelerometer Jerk std-X Axis"             
-[17] "Time Domain Body Accelerometer Jerk std-Y Axis"             
-[18] "Time Domain Body Accelerometer Jerk std-Z Axis"             
-[19] "Time Domain Body Gyroscope mean-X Axis"                     
-[20] "Time Domain Body Gyroscope mean-Y Axis"                     
-[21] "Time Domain Body Gyroscope mean-Z Axis"                     
-[22] "Time Domain Body Gyroscope std-X Axis"                      
-[23] "Time Domain Body Gyroscope std-Y Axis"                      
-[24] "Time Domain Body Gyroscope std-Z Axis"                      
-[25] "Time Domain Body Gyroscope Jerk mean-X Axis"                
-[26] "Time Domain Body Gyroscope Jerk mean-Y Axis"                
-[27] "Time Domain Body Gyroscope Jerk mean-Z Axis"                
-[28] "Time Domain Body Gyroscope Jerk std-X Axis"                 
-[29] "Time Domain Body Gyroscope Jerk std-Y Axis"                 
-[30] "Time Domain Body Gyroscope Jerk std-Z Axis"                 
-[31] "Time Domain Body Accelerometer Magnitude mean"              
-[32] "Time Domain Body Accelerometer Magnitude std"               
-[33] "Time Domain Gravity Accelerometer Magnitude mean"           
-[34] "Time Domain Gravity Accelerometer Magnitude std"            
-[35] "Time Domain Body Accelerometer Jerk Magnitude mean"         
-[36] "Time Domain Body Accelerometer Jerk Magnitude std"          
-[37] "Time Domain Body Gyroscope Magnitude mean"                  
-[38] "Time Domain Body Gyroscope Magnitude std"                   
-[39] "Time Domain Body Gyroscope Jerk Magnitude mean"             
-[40] "Time Domain Body Gyroscope Jerk Magnitude std"              
-[41] "Frequency Domain Body Accelerometer mean-X Axis"            
-[42] "Frequency Domain Body Accelerometer mean-Y Axis"            
-[43] "Frequency Domain Body Accelerometer mean-Z Axis"            
-[44] "Frequency Domain Body Accelerometer std-X Axis"             
-[45] "Frequency Domain Body Accelerometer std-Y Axis"             
-[46] "Frequency Domain Body Accelerometer std-Z Axis"             
-[47] "Frequency Domain Body Accelerometer meanFreq-X Axis"        
-[48] "Frequency Domain Body Accelerometer meanFreq-Y Axis"        
-[49] "Frequency Domain Body Accelerometer meanFreq-Z Axis"        
-[50] "Frequency Domain Body Accelerometer Jerk mean-X Axis"       
-[51] "Frequency Domain Body Accelerometer Jerk mean-Y Axis"       
-[52] "Frequency Domain Body Accelerometer Jerk mean-Z Axis"       
-[53] "Frequency Domain Body Accelerometer Jerk std-X Axis"        
-[54] "Frequency Domain Body Accelerometer Jerk std-Y Axis"        
-[55] "Frequency Domain Body Accelerometer Jerk std-Z Axis"        
-[56] "Frequency Domain Body Accelerometer Jerk meanFreq-X Axis"   
-[57] "Frequency Domain Body Accelerometer Jerk meanFreq-Y Axis"   
-[58] "Frequency Domain Body Accelerometer Jerk meanFreq-Z Axis"   
-[59] "Frequency Domain Body Gyroscope mean-X Axis"                
-[60] "Frequency Domain Body Gyroscope mean-Y Axis"                
-[61] "Frequency Domain Body Gyroscope mean-Z Axis"                
-[62] "Frequency Domain Body Gyroscope std-X Axis"                 
-[63] "Frequency Domain Body Gyroscope std-Y Axis"                 
-[64] "Frequency Domain Body Gyroscope std-Z Axis"                 
-[65] "Frequency Domain Body Gyroscope meanFreq-X Axis"            
-[66] "Frequency Domain Body Gyroscope meanFreq-Y Axis"            
-[67] "Frequency Domain Body Gyroscope meanFreq-Z Axis"            
-[68] "Frequency Domain Body Accelerometer Magnitude mean"         
-[69] "Frequency Domain Body Accelerometer Magnitude std"          
-[70] "Frequency Domain Body Accelerometer Magnitude meanFreq"     
-[71] "Frequency Domain Body Accelerometer Jerk Magnitude mean"    
-[72] "Frequency Domain Body Accelerometer Jerk Magnitude std"     
-[73] "Frequency Domain Body Accelerometer Jerk Magnitude meanFreq"  
-[74] "Frequency Domain Body Gyroscope Magnitude mean"             
-[75] "Frequency Domain Body Gyroscope Magnitude std"              
-[76] "Frequency Domain Body Gyroscope Magnitude meanFreq"         
-[77] "Frequency Domain Body Gyroscope Jerk Magnitude mean"        
-[78] "Frequency Domain Body Gyroscope Jerk Magnitude std"         
-[79] "Frequency Domain Body Gyroscope Jerk Magnitude meanFreq"  
+ [1] "timedomainbodyaccelerometermean-x"                    
+ [2] "timedomainbodyaccelerometermean-y"                    
+ [3] "timedomainbodyaccelerometermean-z"                    
+ [4] "timedomainbodyaccelerometerstd-x"                     
+ [5] "timedomainbodyaccelerometerstd-y"                     
+ [6] "timedomainbodyaccelerometerstd-z"                     
+ [7] "timedomaingravityaccelerometermean-x"                 
+ [8] "timedomaingravityaccelerometermean-y"                 
+ [9] "timedomaingravityaccelerometermean-z"                 
+[10] "timedomaingravityaccelerometerstd-x"                  
+[11] "timedomaingravityaccelerometerstd-y"                  
+[12] "timedomaingravityaccelerometerstd-z"                  
+[13] "timedomainbodyaccelerometerjerkmean-x"                
+[14] "timedomainbodyaccelerometerjerkmean-y"                
+[15] "timedomainbodyaccelerometerjerkmean-z"                
+[16] "timedomainbodyaccelerometerjerkstd-x"                 
+[17] "timedomainbodyaccelerometerjerkstd-y"                 
+[18] "timedomainbodyaccelerometerjerkstd-z"                 
+[19] "timedomainbodygyroscopemean-x"                        
+[20] "timedomainbodygyroscopemean-y"                        
+[21] "timedomainbodygyroscopemean-z"                        
+[22] "timedomainbodygyroscopestd-x"                         
+[23] "timedomainbodygyroscopestd-y"                         
+[24] "timedomainbodygyroscopestd-z"                         
+[25] "timedomainbodygyroscopejerkmean-x"                    
+[26] "timedomainbodygyroscopejerkmean-y"                    
+[27] "timedomainbodygyroscopejerkmean-z"                    
+[28] "timedomainbodygyroscopejerkstd-x"                     
+[29] "timedomainbodygyroscopejerkstd-y"                     
+[30] "timedomainbodygyroscopejerkstd-z"                     
+[31] "timedomainbodyaccelerometermagnitudemean"             
+[32] "timedomainbodyaccelerometermagnitudestd"              
+[33] "timedomaingravityaccelerometermagnitudemean"          
+[34] "timedomaingravityaccelerometermagnitudestd"           
+[35] "timedomainbodyaccelerometerjerkmagnitudemean"         
+[36] "timedomainbodyaccelerometerjerkmagnitudestd"          
+[37] "timedomainbodygyroscopemagnitudemean"                 
+[38] "timedomainbodygyroscopemagnitudestd"                  
+[39] "timedomainbodygyroscopejerkmagnitudemean"             
+[40] "timedomainbodygyroscopejerkmagnitudestd"              
+[41] "frequencydomainbodyaccelerometermean-x"               
+[42] "frequencydomainbodyaccelerometermean-y"               
+[43] "frequencydomainbodyaccelerometermean-z"               
+[44] "frequencydomainbodyaccelerometerstd-x"                
+[45] "frequencydomainbodyaccelerometerstd-y"                
+[46] "frequencydomainbodyaccelerometerstd-z"                
+[47] "frequencydomainbodyaccelerometermeanfreq-x"           
+[48] "frequencydomainbodyaccelerometermeanfreq-y"           
+[49] "frequencydomainbodyaccelerometermeanfreq-z"           
+[50] "frequencydomainbodyaccelerometerjerkmean-x"           
+[51] "frequencydomainbodyaccelerometerjerkmean-y"           
+[52] "frequencydomainbodyaccelerometerjerkmean-z"           
+[53] "frequencydomainbodyaccelerometerjerkstd-x"            
+[54] "frequencydomainbodyaccelerometerjerkstd-y"            
+[55] "frequencydomainbodyaccelerometerjerkstd-z"            
+[56] "frequencydomainbodyaccelerometerjerkmeanfreq-x"       
+[57] "frequencydomainbodyaccelerometerjerkmeanfreq-y"       
+[58] "frequencydomainbodyaccelerometerjerkmeanfreq-z"       
+[59] "frequencydomainbodygyroscopemean-x"                   
+[60] "frequencydomainbodygyroscopemean-y"                   
+[61] "frequencydomainbodygyroscopemean-z"                   
+[62] "frequencydomainbodygyroscopestd-x"                    
+[63] "frequencydomainbodygyroscopestd-y"                    
+[64] "frequencydomainbodygyroscopestd-z"                    
+[65] "frequencydomainbodygyroscopemeanfreq-x"               
+[66] "frequencydomainbodygyroscopemeanfreq-y"               
+[67] "frequencydomainbodygyroscopemeanfreq-z"               
+[68] "frequencydomainbodyaccelerometermagnitudemean"        
+[69] "frequencydomainbodyaccelerometermagnitudestd"         
+[70] "frequencydomainbodyaccelerometermagnitudemeanfreq"    
+[71] "frequencydomainbodyaccelerometerjerkmagnitudemean"    
+[72] "frequencydomainbodyaccelerometerjerkmagnitudestd"     
+[73] "frequencydomainbodyaccelerometerjerkmagnitudemeanfreq"
+[74] "frequencydomainbodygyroscopemagnitudemean"            
+[75] "frequencydomainbodygyroscopemagnitudestd"             
+[76] "frequencydomainbodygyroscopemagnitudemeanfreq"        
+[77] "frequencydomainbodygyroscopejerkmagnitudemean"        
+[78] "frequencydomainbodygyroscopejerkmagnitudestd"         
+[79] "frequencydomainbodygyroscopejerkmagnitudemeanfreq"    
