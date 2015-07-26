@@ -3,6 +3,7 @@
 ## The code requires "dplyr" library
 library(dplyr)
 
+## the code assumes all required test files are already in the working directory
 ## read all training related data
 xtrain = read.table("X_train.txt")
 ytrain = read.table("y_train.txt")
