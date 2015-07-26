@@ -24,9 +24,9 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
   + $ tBodyAcc-mean()-Y                   : num  -0.0203 -0.0164 -0.0195 -0.0262 -0.0166 ...
   + $ tBodyAcc-mean()-Z                   : num  -0.133 -0.124 -0.113 -0.123 -0.115 ...
   + $ tBodyAcc-std()-X                    : num  -0.995 -0.998 -0.995 -0.996 -0.998 ...
-  + .
-  + .
-  + .
+    .
+    .
+    .
 
 - ytrain ( read from y_train.txt'): Training labels for activities - 7352 rows (observations), 1 column (activity number)  
   + 'data.frame':	7352 obs. of  1 variable:
@@ -38,9 +38,9 @@ The obtained dataset has been randomly partitioned into two sets, where 70% of t
   + $ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
   + $ tBodyAcc-mean()-Z                   : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
   + $ tBodyAcc-std()-X                    : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
-  + .
-  + .
-  + .
+    .
+    .
+    .
 
 - ytest (read from 'y_test.txt'): Test labels for activities - 2947 rows (measurements), 1 column (activity number)  
   + 'data.frame':	2947 obs. of  1 variable:
@@ -156,7 +156,7 @@ has 180 rows (30 subjects * 6 activities) and 81 columns/variables (79 measureme
 
 
 
-### The following changes were made to the names of 79 measurement variables to make them more descriptive: 
+### The following changes were made to the names of 79 measurement variables to make them more readable: 
 
 - Names of all variables were converted to lower case
 - "t" at the begin of variable was changed to "timedomain"
